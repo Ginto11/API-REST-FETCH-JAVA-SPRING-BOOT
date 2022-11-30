@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Home</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{/css/estilos.css}">
+    </head>
+    
+    <body th:onload="guardarToken([[(${token})]])">
+        <main>
+            <form action="">
+                <h1 id="titulo">Agregar Estudiante</h1>
+                <select id="select">
+                    <option value="" selected="">Universidad</option>
+                </select>
+                
+                <input id="nombre" type="text" name="nombre" placeholder="Nombre" required>
+                <input id="apellido" type="text" name="apellido" placeholder="Apellido" required>
+                <input id="edad" type="number" name="edad" placeholder="Edad" required>
+                <div style="display: flex; justify-content: center; gap: 30px;">
+                    <input type="submit" name="enviar" value="Enviar">
+                    <input type="submit" name="actualizar" value="Actualizar">
+                </div>
+            </form>
+
+            <div class="contenedor--buscador">
+                
+                <h2>Listar Estudiantes Por Universidad</h2>
+                <select id="selectBuscador">
+                    
+                </select>
+                
+                <div class="buscador">
+                    <input type="number" name="id" id="idEstudiante" placeholder="Buscar por ID">
+                    <input id="btn-buscar" type="submit" value="Buscar">
+                </div>
+                
+                <div class="contenedor--registro-u">
+                    <h2>Registrar Universidad</h2>
+                    <div>
+                        <input type="text" name="universidad" placeholder="Nombre de la Universidad">
+                        <input type="submit" name="registrar" value="Guardar">
+                    </div>
+                </div>
+                
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NOMBRE</th>
+                        <th>APELLIDO</th>
+                        <th>EDAD</th>
+                        <th>OPCION</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </main>
+    </body>
+    <script th:src="@{/js/script.js}"></script>
+</html>
