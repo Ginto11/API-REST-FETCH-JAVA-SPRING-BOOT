@@ -4,12 +4,16 @@
         <title>Login</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{/css/estilos.css}"/>
     </head>
     <body>
-        <form action="" th:action="@{/}" th:object="${usuario}" method="POST">
+        <main>
+            <form action="" th:action="@{/}" th:object="${usuario}" method="POST">
+            <h1 id="titulo">Iniciar Sesion</h1>
             <input type="text" name="nombre" placeholder="Usuario">
             <input type="text" name="password" placeholder="Password">
             <input type="submit" name="enviar" value="Ingresar">
         </form>
+        </main>
     </body>
 </html>

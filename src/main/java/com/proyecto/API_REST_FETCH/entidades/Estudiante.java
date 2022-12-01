@@ -1,6 +1,5 @@
 package com.proyecto.API_REST_FETCH.entidades;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -10,7 +9,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
@@ -40,13 +39,6 @@ public class Estudiante {
         @JsonIgnore
         @ManyToOne(fetch = FetchType.LAZY)
         @JoinColumn(name = "id_universidad")
-        private Universidad universidad;
-        
-        
-        @Getter @Setter
-        @JsonIgnore
-        @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-        @JoinColumn(name = "id_facultad")
-        private Facultad facultad;
+        private Universidad universidad;  
         
 }
